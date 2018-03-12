@@ -1,0 +1,21 @@
+/* src/components/CreateGameButton.css */
+.SubmitLetter {
+  background-color: #448F30;
+  border: 1px solid #0F4800;
+  border-radius: 3px;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 15px;
+  font-size: 25px;
+  text-align: center;
+}
+
+
+
+#PlayerInputField{
+  height: 35px;
+  width: 40px;
+  margin: 10px;
+  font-size: 25px;
+  text-align: center;
+}

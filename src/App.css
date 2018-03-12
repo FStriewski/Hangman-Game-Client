@@ -1,0 +1,15 @@
+.App{
+  background-color: #f9f9f9;
+	font-family: Arial;
+  border: 1px dashed black;
+	margin: 0;
+}
+
+h1{
+  text-transform: uppercase;
+	letter-spacing: 8px;
+	padding: 0;
+	margin-left: 0;
+	margin-right: 0;
+  text-align: center;
+}

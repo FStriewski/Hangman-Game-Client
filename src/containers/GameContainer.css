@@ -1,0 +1,13 @@
+.gameContainer {
+  background-color: grey;
+  display: flex;
+}
+
+#flexBox{
+    display: flex;
+}
+
+.innerFlex{
+  display: inline-flex;
+  flex-direction: row;
+}

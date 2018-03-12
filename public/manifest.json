@@ -1,0 +1,9 @@
+{
+  "short_name": "Hangman App",
+  "name": "Hangman App Game",
+  "icons": [  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
