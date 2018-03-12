@@ -5,7 +5,7 @@ const initialState = {
   wordToGuess,
   wordHidden,
   correctLetters : [],
-    guessesSoFar: []
+  guessesSoFar: []
 };
 
 export default function(state = initialState, action = {}) {
@@ -18,7 +18,7 @@ export default function(state = initialState, action = {}) {
       break;
     case A_LETTER:
       return {...state,
-        guessesSoFar: state.guessesSoFar.concat(action.payload),
+          guessesSoFar: state.guessesSoFar.concat(action.payload),
         }
         break;
     default:

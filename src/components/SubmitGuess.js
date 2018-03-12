@@ -23,16 +23,16 @@ export class SubmitGuess extends PureComponent {
                 .toUpperCase()
                 .slice(0, 1)
 
+ if (!this.props.logInput.guessesSoFar.includes(guess)){
+      this.props.logAttempt(guess)
 
-    this.props.logAttempt(guess)
+      if (this.props.newGame.wordToGuess.includes(guess)){
+          this.props.replaceLetter(guess)
+      } else {
+        this.props.countUp()
+      }
+}
 
-  //  this.props.determineWinLose(this.props.countWrong.counter)
-
-    if (this.props.newGame.wordToGuess.includes(guess)){
-      this.props.replaceLetter(guess)
-    } else {
-      this.props.countUp()
-    }
     // Use value to and get rid of this by using state
     document.getElementById('PlayerInputField').value = ""
   };
@@ -46,6 +46,6 @@ export class SubmitGuess extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ newGame, countWrong }) => ({ newGame, countWrong })
+const mapStateToProps = ({ newGame, countWrong, logInput }) => ({ newGame, countWrong, logInput })
 
   export default connect(mapStateToProps, { logAttempt, replaceLetter, countUp  })(SubmitGuess)
