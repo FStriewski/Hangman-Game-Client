@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
-import { logAttempt } from '../actions/logInput'
-import { replaceLetter } from '../actions/correctGuesses'
+import { logAttempt, replaceLetter } from '../actions/logInput'
+//import { replaceLetter } from '../actions/correctGuesses'
 import { countUp } from '../actions/countWrong'
 import { declareLost } from '../actions/lostCondition'
 import { declareWon } from '../actions/winCondition'
@@ -11,13 +11,23 @@ import './SubmitGuess.css'
 
 export class SubmitGuess extends PureComponent {
 
-  handleClick = () => {
+  // determineWinLose = (test) => {
+  //  return  (test > 1) ? alert("ww") : null
+  // }
 
+  handleClick = (event) => {
+        const val = event.target.value
 // Slim actions / put into one
 // Better use refs here
 // Make button small
-    let guess = document.getElementById('PlayerInputField').value.toUpperCase().slice(0, 1);
+    let guess = val
+                .toUpperCase()
+                .slice(0, 1)
+
+
     this.props.logAttempt(guess)
+
+  //  this.props.determineWinLose(this.props.countWrong.counter)
 
     if (this.props.newGame.wordToGuess.includes(guess)){
       this.props.replaceLetter(guess)
@@ -37,6 +47,6 @@ export class SubmitGuess extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ newGame }) => ({ newGame })
+const mapStateToProps = ({ newGame, countWrong }) => ({ newGame, countWrong })
 
   export default connect(mapStateToProps, { logAttempt, replaceLetter, countUp  })(SubmitGuess)

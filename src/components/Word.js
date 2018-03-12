@@ -10,7 +10,7 @@ class Word extends Component {
 
   //  let wordHidden = this.props.correctGuesses.wordHidden
     let wordToGuessArray = this.props.newGame.wordToGuess.split("")
-    let allGuesses = this.props.correctGuesses.correctLetters
+    let allGuesses = this.props.logInput.correctLetters
 
     let display = wordToGuessArray.map(x => allGuesses.indexOf(x) < 0 ? "_" : x);
 
@@ -24,5 +24,5 @@ class Word extends Component {
   }
 }
 
-const mapStateToProps = ({ correctGuesses, newGame }) => ({ correctGuesses, newGame })
+const mapStateToProps = ({ logInput, newGame }) => ({ logInput, newGame })
 export default connect(mapStateToProps, {})(Word)

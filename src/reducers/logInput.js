@@ -1,16 +1,29 @@
+import {wordToGuess, wordHidden} from '../components/wordRepos'
+import { CORRECT_GUESS, A_LETTER  } from '../actions/types'
 
 const initialState = {
-  guessesSoFar: []
+  wordToGuess,
+  wordHidden,
+  correctLetters : [],
+    guessesSoFar: []
 };
 
 export default function(state = initialState, action = {}) {
 
-  if (action.type === 'A_LETTER'){
-    return {
-      ...state, guessesSoFar: state.guessesSoFar.concat(action.payload)
-    }
+  switch (action.type) {
+    case CORRECT_GUESS:
+      return {...state,
+           correctLetters: state.correctLetters.concat(action.payload),
+      }
+      break;
+    case A_LETTER:
+      return {...state,
+        guessesSoFar: state.guessesSoFar.concat(action.payload),
+        }
+        break;
+    default:
+      return state
   }
-  return state
 }
 
 /* Syntax reminder

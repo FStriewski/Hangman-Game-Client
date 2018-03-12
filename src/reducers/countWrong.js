@@ -1,4 +1,4 @@
-
+// counts wrong input
 export default function(state = {counter: 0}, action = {}) {
 
   if (action.type === 'COUNT'){
