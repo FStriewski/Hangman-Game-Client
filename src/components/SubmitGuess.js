@@ -2,11 +2,10 @@ import React, { PureComponent } from 'react'
 import { logAttempt, replaceLetter } from '../actions/logInput'
 //import { replaceLetter } from '../actions/correctGuesses'
 import { countUp } from '../actions/countWrong'
-import { declareLost } from '../actions/lostCondition'
-import { declareWon } from '../actions/winCondition'
+import { declareLost, declareWon } from '../actions/gameStatus'
 import { connect } from 'react-redux'
 //import {wordToGuess} from './wordRepos'
-import './SubmitGuess.css'
+import '../style/SubmitGuess.css'
 
 
 export class SubmitGuess extends PureComponent {

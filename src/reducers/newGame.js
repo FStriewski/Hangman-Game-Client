@@ -1,6 +1,7 @@
 
 let initialState = {
   wordToGuess: "",
+  status: "pending"
 }
 
 export default (state = initialState, { type, payload } = {}) => {

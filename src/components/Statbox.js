@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import './Statbox.css';
+import '../style/Statbox.css';
 
 class Statbox extends Component {
 

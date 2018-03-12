@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {wordToGuess} from './wordRepos'
 import { newGame } from '../actions/newGame'
-import './Statbox.css';
+import '../style/newGameButton.css';
 
 class NewGameButton extends Component {
 

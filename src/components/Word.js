@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import './Word.css';
+import '../style/Word.css';
 import { connect } from 'react-redux'
 
 
