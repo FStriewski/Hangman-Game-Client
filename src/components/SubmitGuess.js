@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import { logAttempt, replaceLetter } from '../actions/logInput'
 import { countUp } from '../actions/countWrong'
-import { declareLost, declareWon } from '../actions/gameStatus'
+import { changeStatus } from '../actions/gameStatus'
 import { connect } from 'react-redux'
 import '../style/SubmitGuess.css'
 
@@ -34,6 +34,10 @@ export class SubmitGuess extends PureComponent {
               this.props.replaceLetter(guess)
           } else {
             this.props.countUp()
+            if (this.props.countWrong.counter > 2){
+              this.props.changeStatus("lost")
+              alert("YOU HAVE LOST!")
+            }
           }
     }
 
@@ -52,4 +56,4 @@ export class SubmitGuess extends PureComponent {
 
 const mapStateToProps = ({ newGame, countWrong, logInput }) => ({ newGame, countWrong, logInput })
 
-export default connect(mapStateToProps, { logAttempt, replaceLetter, countUp  })(SubmitGuess)
+export default connect(mapStateToProps, { logAttempt, replaceLetter, countUp, changeStatus  })(SubmitGuess)

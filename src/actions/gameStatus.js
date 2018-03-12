@@ -1,5 +1,5 @@
 // Action Creator
-import { LOST, WON, NEW_GAME  } from './types'
+import { STATUS, NEW_GAME  } from './types'
 
 
 export const newGame = (wordToGuess, status) => {
@@ -12,12 +12,7 @@ export const newGame = (wordToGuess, status) => {
   }
 }
 
-export const declareLost = () => ({
-    type: LOST,
-    payload:  "lost"
-});
-
-export const declareWon = status => ({
-    type: WON,
-    payload:  "won"
+export const changeStatus = (status) => ({
+    type: STATUS,
+    payload:  status
 });

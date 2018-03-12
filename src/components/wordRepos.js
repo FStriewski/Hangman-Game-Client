@@ -14,7 +14,10 @@
 
 
 export let wordToGuess = generateWord();
-export let wordHidden = wordToGuess.split("").map(x => x = "-").join("")
+export let wordHidden = wordToGuess
+                            .split("")
+                            .map(x => x = "-")
+                            .join("")
 
 
 
