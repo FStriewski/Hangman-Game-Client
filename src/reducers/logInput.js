@@ -1,5 +1,5 @@
 //import {wordToGuess, wordHidden} from '../components/wordRepos'
-import { CORRECT_GUESS, A_LETTER, NEW_GAME  } from '../actions/types'
+import { CORRECT_GUESS, A_LETTER, NEW_GAME, REVEAL  } from '../actions/types'
 
 const initialState = {
   correctLetters : [],
@@ -22,7 +22,11 @@ export default function(state = initialState, action = {}) {
     case A_LETTER:
       return {...state,
           guessesSoFar: state.guessesSoFar.concat(action.payload),
-        }
+      }
+    case REVEAL:
+      return {...state,
+          guessesSoFar: state.guessesSoFar.concat(action.payload),
+      }
     default:
       return state
   }

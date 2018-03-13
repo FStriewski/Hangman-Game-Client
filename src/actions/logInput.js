@@ -11,7 +11,8 @@ export const replaceLetter = letter => ({
     payload:  letter
 });
 
-// export const logAttempt = guess => ({
+// export const reveal = (["A","B","C","D","E","F","G","H",
+//                         "I","J","K","L","M",]) => ({
 //     type: A_LETTER,
 //     payload:  guess
 // });

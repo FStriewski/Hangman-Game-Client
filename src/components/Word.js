@@ -1,24 +1,28 @@
-
 import React, { Component } from 'react';
 import '../style/Word.css';
 import { connect } from 'react-redux'
+import { changeStatus } from '../actions/gameStatus'
 
 
 class Word extends Component {
 
   render() {
-  //  if(true ){
+    var display;
+    if(this.props.newGame.status == "pending"){
       //  let wordHidden = this.props.correctGuesses.wordHidden
       let wordToGuessArray = this.props.newGame.wordToGuess.split("")
       let allGuesses = this.props.logInput.correctLetters
 
-      let display = wordToGuessArray.map(x => allGuesses.indexOf(x) < 0 ? "_" : x);
-  //  }
+      display = wordToGuessArray.map(x => allGuesses.indexOf(x) < 0 ? "_" : x);
+      if (!display.includes("_")){
+        this.props.changeStatus("won")
+        alert("You won!")
+       }
+    }
 
     return (
       <div className="Word">
-        <br/>
-          {display}
+          {display||""}
         <br/>
       </div>
     );
@@ -26,4 +30,4 @@ class Word extends Component {
 }
 // Needs to check on game status
 const mapStateToProps = ({ logInput, newGame }) => ({ logInput, newGame })
-export default connect(mapStateToProps, {})(Word)
+export default connect(mapStateToProps, {changeStatus})(Word)

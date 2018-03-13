@@ -12,8 +12,9 @@ import '../style/HangSteps.css';
     let src = baseUrl+step+".png"
 
     return (
-      <div>
-      <img className="image img-fluid rounded float-right" alt="Responsive image" src={src}/>
+      <div className="col">
+      <img className="image img-fluid rounded" alt="Responsive image" src={src} style={{width:"220px"}}/><br/>
+      <div className="">From: <i> "Once upon a time in west"</i></div>
       </div>
     )}
 }
