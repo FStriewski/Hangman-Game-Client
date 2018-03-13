@@ -62,8 +62,8 @@ export class SubmitGuess extends PureComponent {
 
   render() {
     return (
-      <div className="InputWrapper">
-        <div className="SubmitLetter">Make a guess <input type="text" className="Input" id="PlayerInputField" placeholder="" onChange={this.handleSubmit} /></div>
+      <div className="InputWrapper container">
+        <div className="SubmitLetter justify-content-center">Make a guess <input type="text" className="Input" id="PlayerInputField" placeholder="" onChange={this.handleSubmit} /></div>
       </div>
     )
   }
