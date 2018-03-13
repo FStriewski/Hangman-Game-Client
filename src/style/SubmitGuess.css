@@ -1,12 +1,11 @@
 /* src/components/CreateGameButton.css */
 .SubmitLetter {
-  background-color: #448F30;
-  border: 1px solid #0F4800;
+  border: 1px solid #white;
   border-radius: 3px;
-  color: #fff;
   padding: 0px 10px;
   margin-left: 15px;
   font-size: 20px;
+  width: 20%;
   text-align: center;
 }
 

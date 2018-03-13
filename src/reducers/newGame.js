@@ -1,7 +1,10 @@
+// DONT DELETE RENAME TO STATUS
+
+import { generateWord } from '../components/wordRepos'
 
 let initialState = {
-  wordToGuess: "",
-  status: ""
+  wordToGuess: generateWord(),
+  status: "pending"
 }
 
 export default (state = initialState, { type, payload } = {}) => {

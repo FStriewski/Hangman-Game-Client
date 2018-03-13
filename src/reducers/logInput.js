@@ -1,16 +1,20 @@
 //import {wordToGuess, wordHidden} from '../components/wordRepos'
-import { CORRECT_GUESS, A_LETTER  } from '../actions/types'
+import { CORRECT_GUESS, A_LETTER, NEW_GAME  } from '../actions/types'
 
 const initialState = {
-//  wordToGuess,
-//  wordHidden,
   correctLetters : [],
-  guessesSoFar: []
+  guessesSoFar: [],
 };
 
 export default function(state = initialState, action = {}) {
 
   switch (action.type) {
+    case NEW_GAME:
+      return {
+            // Filter removes input without mutation.
+           guessesSoFar: state.guessesSoFar.filter(x => x == false),
+           correctLetters: state.correctLetters.filter(x => x == false),
+      }
     case CORRECT_GUESS:
       return {...state,
            correctLetters: state.correctLetters.concat(action.payload),

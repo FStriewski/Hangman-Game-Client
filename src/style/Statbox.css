@@ -1,12 +1,7 @@
 .Statbox{
-  background-color: #f1f1f1;
-  padding: 0px 0px;
-  font-size: 25px;
+  font-family: monospace;
+  font-size: 20px;
   width: 100%;
-  font-family: 'Tangerine', serif;
-}
-
-span {
-  color: red;
-  letter-spacing: 4px;
+  color: #3DA9A9;
+  text-shadow: 2px 2px white 5px;
 }

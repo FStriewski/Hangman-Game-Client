@@ -17,7 +17,7 @@ class NewGameButton extends Component {
     return (
       <button
         onClick={this.handleClick}
-        className="newGameButton btn btn-sm btn-warning"
+        className="newGameButton btn btn-outline-info"
       >
         New Game
       </button>

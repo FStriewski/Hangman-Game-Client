@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import NewGameButton from '../components/newGameButton';
-//import '../style/Statbox.css';
+import '../style/Statbox.css';
 
 class Statbox extends Component {
 
@@ -9,7 +9,7 @@ class Statbox extends Component {
     return (
       <div className="Statbox align-right">
 
-      <table class="table table-striped table-dark">
+      <table class="table table-striped">
         <tbody>
           <tr>
             <td style={{width: '40%'}}>
