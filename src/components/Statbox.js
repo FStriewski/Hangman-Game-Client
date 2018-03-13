@@ -7,7 +7,7 @@ class Statbox extends Component {
 
   render() {
     return (
-      <div className="Statbox align-right">
+      <div className="Statbox">
 
       <table class="table table-striped">
         <tbody>

@@ -57,13 +57,16 @@ export class SubmitGuess extends PureComponent {
     }
 
     // Use value to and get rid of this by using state
-    document.getElementById('PlayerInputField').value = ""
+    setTimeout(function(){
+      document.getElementById('PlayerInputField').value = ""
+    }, 250);
+
   };
 
   render() {
     return (
-      <div className="InputWrapper container">
-        <div className="SubmitLetter justify-content-center">Make a guess <input type="text" className="Input" id="PlayerInputField" placeholder="" onChange={this.handleSubmit} /></div>
+      <div className="InputWrapper d-flex justify-content-center">
+        <div className="SubmitLetter ">Make a guess <input type="text" className="Input" id="PlayerInputField" placeholder="" onChange={this.handleSubmit} /></div>
       </div>
     )
   }
