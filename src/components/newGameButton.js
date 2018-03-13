@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import {wordToGuess} from './wordRepos'
+import { generateWord } from './wordRepos'
 import { newGame } from '../actions/gameStatus'
 import '../style/newGameButton.css';
 
@@ -8,7 +8,8 @@ class NewGameButton extends Component {
 
 
   handleClick = () => {
-    this.props.newGame(wordToGuess, "pending")
+    let word = generateWord()
+    this.props.newGame(word, "pending")
   }
 
   render() {

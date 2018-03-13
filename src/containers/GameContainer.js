@@ -6,6 +6,20 @@ import NewGameButton from '../components/newGameButton';
 import SubmitGuess from '../components/SubmitGuess';
 
 
+// function Greeting(props) {
+//   const isLoggedIn = props.isLoggedIn;
+//   if (isLoggedIn) {
+//     return <UserGreeting />;
+//   }
+//   return <GuestGreeting />;
+// }
+//
+// ReactDOM.render(
+//   // Try changing to isLoggedIn={true}:
+//   <Greeting isLoggedIn={false} />,
+//   document.getElementById('root')
+// );
+
 class GameContainer extends Component {
   render() {
     return (

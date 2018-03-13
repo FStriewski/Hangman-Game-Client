@@ -6,6 +6,21 @@ import { connect } from 'react-redux'
 import '../style/SubmitGuess.css'
 
 
+// function Greeting(props) {
+//   const isLoggedIn = props.isLoggedIn;
+//   if (isLoggedIn) {
+//     return <UserGreeting />;
+//   }
+//   return <GuestGreeting />;
+// }
+//
+// ReactDOM.render(
+//   // Try changing to isLoggedIn={true}:
+//   <Greeting isLoggedIn={false} />,
+//   document.getElementById('root')
+// );
+
+
 export class SubmitGuess extends PureComponent {
 
   // Slim actions / put into one
