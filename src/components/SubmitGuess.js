@@ -49,7 +49,7 @@ export class SubmitGuess extends PureComponent {
               this.props.replaceLetter(guess)
           } else {
             this.props.countUp()
-            if (this.props.countWrong.counter > 2){
+            if (this.props.countWrong.counter > 6){
               this.props.changeStatus("lost")
               alert("YOU HAVE LOST!")
             }
@@ -62,8 +62,8 @@ export class SubmitGuess extends PureComponent {
 
   render() {
     return (
-      <div className="PlayerInpumapStateToPropst">
-        <div className="SubmitLetter">Make a guess<input type="text" className="Input" id="PlayerInputField" placeholder="" onChange={this.handleSubmit} /></div>
+      <div className="InputWrapper">
+        <div className="SubmitLetter">Make a guess <input type="text" className="Input" id="PlayerInputField" placeholder="" onChange={this.handleSubmit} /></div>
       </div>
     )
   }

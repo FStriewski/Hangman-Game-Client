@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { generateWord } from './wordRepos'
 import { newGame } from '../actions/gameStatus'
-import '../style/newGameButton.css';
+//import '../style/newGameButton.css';
 
 class NewGameButton extends Component {
 
@@ -17,7 +17,7 @@ class NewGameButton extends Component {
     return (
       <button
         onClick={this.handleClick}
-        className="newGameButton"
+        className="newGameButton btn btn-sm btn-warning"
       >
         New Game
       </button>

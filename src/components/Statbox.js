@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import '../style/Statbox.css';
+import NewGameButton from '../components/newGameButton';
+//import '../style/Statbox.css';
 
 class Statbox extends Component {
 
   render() {
     return (
-      <div className="Statbox">
-        <div>Log: <span>{this.props.logInput.guessesSoFar}</span></div><br/>
-        <div>Wrong: <span>{this.props.countWrong.counter}</span></div>
+      <div className="Statbox align-right">
+
+      <table class="table table-striped table-dark">
+        <tbody>
+          <tr>
+            <td style={{width: '40%'}}>
+              <div>Log: <span>{this.props.logInput.guessesSoFar}</span></div>
+            </td>
+            <td style={{width: '40%'}}>
+              <div>Wrong: <span>{this.props.countWrong.counter}</span></div>
+            </td>
+            <td style={{width: '20%'}}>
+              <NewGameButton />
+            </td>
+          </tr>
+        </tbody>
+        </table>
       </div>
     );
   }
