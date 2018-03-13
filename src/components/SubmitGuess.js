@@ -6,29 +6,9 @@ import { connect } from 'react-redux'
 import '../style/SubmitGuess.css'
 
 
-// function Greeting(props) {
-//   const isLoggedIn = props.isLoggedIn;
-//   if (isLoggedIn) {
-//     return <UserGreeting />;
-//   }
-//   return <GuestGreeting />;
-// }
-//
-// ReactDOM.render(
-//   // Try changing to isLoggedIn={true}:
-//   <Greeting isLoggedIn={false} />,
-//   document.getElementById('root')
-// );
-
-
 export class SubmitGuess extends PureComponent {
 
-  // Slim actions / put into one
-  // Better use refs here
-  // Make button small
-
   handleSubmit = (event) => {
-
 
     // Lock game if not running -- not quite working
     if(this.props.newGame.status !== "pending") {
@@ -49,7 +29,7 @@ export class SubmitGuess extends PureComponent {
               this.props.replaceLetter(guess)
           } else {
             this.props.countUp()
-            if (this.props.countWrong.counter > 6){
+            if (this.props.countWrong.counter >= 6){
               this.props.changeStatus("lost")
               alert("YOU HAVE LOST!")
             }
