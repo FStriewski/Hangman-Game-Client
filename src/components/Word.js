@@ -7,7 +7,7 @@ import { changeStatus } from '../actions/gameStatus'
 class Word extends Component {
 
   render() {
-    
+
     var display;
     if(this.props.newGame.status == "pending"){
       let wordToGuessArray = this.props.newGame.wordToGuess.split("")
@@ -15,10 +15,10 @@ class Word extends Component {
 
       display = wordToGuessArray.map(x => allGuesses.indexOf(x) < 0 ? "_" : x);
 
-      if (!display.includes("_")){
-        this.props.changeStatus("won")
-        alert("You won!")
-       }
+      // if (!display.includes("_")){
+      //   this.props.changeStatus("won")
+      //   alert("You won!")
+      //  }
 
     }
 

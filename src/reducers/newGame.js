@@ -12,7 +12,7 @@ export default (state = initialState, { type, payload } = {}) => {
     case NEW_GAME :
     return { ...state, wordToGuess: payload.wordToGuess, status: payload.status}
     case STATUS :
-    return { ...state, wordToGuess: payload.wordToGuess, status: payload.status}
+    return { ...state, status: payload.status}
     default :
       return state
   }

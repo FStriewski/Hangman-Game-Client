@@ -11,39 +11,46 @@ export class SubmitGuess extends PureComponent {
   triggerWin() {}
 
   handleSubmit = (event) => {
-    if(this.props.newGame.status == "pending") {
+  //  if(this.props.newGame.status == "pending") {
     // Lock game if not running -- not quite working
 
     //   document.getElementById('PlayerInputField').value = ""
     //   return
     // }
 
-    let guess = event.target.value
-                .toUpperCase()
-                .slice(0, 1)
+    setTimeout(function(){
+      document.getElementById('PlayerInputField').value = ""
+    }, 250);
 
-      // Don't process duplicate input:
-       if (!this.props.logInput.guessesSoFar.includes(guess)){
-            this.props.logAttempt(guess)
+    if (this.props.countWrong.counter > 6){
+      this.props.changeStatus("lost")
+      return
+    } else {
 
-            // if((this.props.newGame.wordToGuess).indexOf(this.props.logInput.guessesSoFar)<=0){
-            //   alert("Winner!")
+          let guess = event.target.value
+                      .toUpperCase()
+                      .slice(0, 1)
+
+            // Don't process duplicate input:
+             if (!this.props.logInput.guessesSoFar.includes(guess)){
+                  this.props.logAttempt(guess)
+
+                  // if((this.props.newGame.wordToGuess).indexOf(this.props.logInput.guessesSoFar)<=0){
+                  //   alert("Winner!")
+                  }
+
+            // Check if letter is in word:
+                  if (this.props.newGame.wordToGuess.includes(guess)){
+                      this.props.replaceLetter(guess)
+                  } else {
+                    this.props.countUp()
+                    }
             }
 
-      // Check if letter is in word:
-            if (this.props.newGame.wordToGuess.includes(guess)){
-                this.props.replaceLetter(guess)
-            } else {
-              this.props.countUp()
-              if (this.props.countWrong.counter >= 6){
-                this.props.changeStatus("lost")
-              }
-            }
+
       // Use value to and get rid of this by using state
-      setTimeout(function(){
-        document.getElementById('PlayerInputField').value = ""
-      }, 250);
-      }
+
+  //    }
       //else if (this.props.newGame.status == "won"){this.props.changeStatus("lost") }
     }
 
