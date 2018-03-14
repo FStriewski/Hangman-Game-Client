@@ -3,6 +3,7 @@ import Statbox from '../components/Statbox'
 import SubmitGuess from '../components/SubmitGuess';
 import Word from '../components/Word';
 import HangSteps from '../components/HangSteps';
+import Progress from './Progress';
 
 class MainContainer extends Component {
   render() {
@@ -11,7 +12,11 @@ class MainContainer extends Component {
         <h1>Hangman!</h1>
         <Word />
         <SubmitGuess />
+        <br/>
+        <Progress/>
         <Statbox />
+
+
       </div>
     );
   }
